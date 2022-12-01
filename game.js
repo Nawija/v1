@@ -39,7 +39,7 @@ startGame.addEventListener("click", () => {
     startTime = new Date().getTime();
     timerG();
     cards.forEach((card) => {
-        card.classList.remove('off');
+        card.classList.remove("off");
     });
     setTimeout(function () {
         cards.forEach((card) => {
@@ -90,8 +90,10 @@ function clickCard() {
                 if (gameResult === gamePairs) {
                     const endTime = new Date().getTime();
                     let gameTime = (endTime - startTime) / 1000;
-                    setTimeout(function () {alert(`Wygrana! Twój czas to ${gameTime} sekund`);}, 1);
-                    location.reload();
+                    setTimeout(function () {
+                        alert(`Wygrana! Twój czas to ${gameTime} sekund`);
+                        location.reload();
+                    }, 200);
                 }
             } else {
                 activeCards.forEach((card) => {
@@ -121,4 +123,3 @@ const init = function () {
     }, 1);
 };
 init();
-
