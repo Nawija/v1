@@ -6,6 +6,11 @@
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
 }
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
 .infoGame {
     display: flex;
     align-items: center;
