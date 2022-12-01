@@ -60,3 +60,27 @@ h2 {
     text-transform: capitalize;
     text-decoration: underline;
 }
+
+@media(max-width: 700px){
+    h2 {
+        font-size: 25px;
+    }
+    .menuBtn{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 30vh;
+        flex-direction: column;
+    }
+    .rules {
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+    }
+    .rules p {
+       font-size: 15px;
+    }
+    .rules p:first-child {
+        font-size: 17px;
+    }
+}
