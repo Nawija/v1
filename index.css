@@ -65,7 +65,7 @@ h2 {
 
 @media(max-width: 700px){
     h2 {
-        font-size: 23px;
+        font-size: 25px;
         margin-top: -50px;
         margin-bottom: 50px;
     }
@@ -73,7 +73,7 @@ h2 {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 25vh;
+        height: 20vh;
         flex-direction: column;
     }
 
