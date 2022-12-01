@@ -13,11 +13,12 @@ body {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
 }
 
 h2 {
     font-size: 50px;
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
     color: #eee;
     text-transform: capitalize;
 }
@@ -31,7 +32,7 @@ h2 {
 .menuBtn button a {
     text-decoration: none;
     color: rgba(110, 28, 106, 0.706);
-    padding: 7px 35px;
+    padding: 5px 25px;
     margin: 0 30px;
     background: linear-gradient(
         140deg,
@@ -64,7 +65,8 @@ h2 {
 
 @media(max-width: 700px){
     h2 {
-        font-size: 25px;
+        font-size: 23px;
+        margin-top: -15vh;
     }
     .menuBtn{
         display: flex;
@@ -73,9 +75,7 @@ h2 {
         height: 30vh;
         flex-direction: column;
     }
-    .menuBtn button{
-        
-    }
+
     .rules {
         position: absolute;
         bottom: 10px;
