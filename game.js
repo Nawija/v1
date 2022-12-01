@@ -90,7 +90,7 @@ function clickCard() {
                 if (gameResult === gamePairs) {
                     const endTime = new Date().getTime();
                     let gameTime = (endTime - startTime) / 1000;
-                    alert(`Wygrana! Twój czas to ${gameTime} sekund`);
+                    setTimeout(function () {alert(`Wygrana! Twój czas to ${gameTime} sekund`);}, 1);
                     location.reload();
                 }
             } else {
@@ -106,14 +106,19 @@ function clickCard() {
 }
 
 const init = function () {
+    // cards.forEach((card) => {
+    //     card.classList.add('off');
+    // });
     cards.forEach((card) => {
         const position = Math.floor(Math.random() * cardsColor.length);
         card.classList.add(cardsColor[position]);
         cardsColor.splice(position, 1);
     });
-    cards.forEach((card) => {
-        card.classList.add('off');
-    });
+    setTimeout(function () {
+        cards.forEach((card) => {
+            card.classList.add("off");
+        });
+    }, 1);
 };
-
 init();
+
