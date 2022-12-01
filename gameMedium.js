@@ -63,7 +63,7 @@ function timerG() {
             timerGame.innerHTML = minute + ":" + sec;
         }
         if (sec === 30) {
-            alert('Przegrałeś, Koniec Czasu')
+            alert(`Lose, Time's up`)
             location.reload()
         }
     }, 1000);
@@ -91,7 +91,7 @@ function clickCard() {
                     const endTime = new Date().getTime();
                     let gameTime = (endTime - startTime) / 1000;
                     setTimeout(function () {
-                        alert(`Wygrana! Twój czas to ${gameTime} sekund`);
+                        alert(`Win! your time is ${gameTime} second`);
                         location.reload();
                     }, 200);
                 }

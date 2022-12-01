@@ -47,6 +47,18 @@ h2 {
     cursor: pointer;
 }
 
+.arrow{
+    position: absolute;
+    left: 10%;
+    bottom: 12%;
+    height: 100px;
+    width: 100px;
+    background-image: url(./img/arrow.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .rules {
     position: absolute;
     bottom: 30px;
@@ -75,6 +87,17 @@ h2 {
         justify-content: space-between;
         height: 20vh;
         flex-direction: column;
+    }
+    .arrow{
+        position: absolute;
+        left: 30%;
+        bottom: 10%;
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/arrow.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .rules {
