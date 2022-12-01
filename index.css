@@ -17,8 +17,9 @@ body {
 
 h2 {
     font-size: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 10vh;
     color: #eee;
+    text-transform: capitalize;
 }
 
 .menuBtn button {
@@ -30,7 +31,7 @@ h2 {
 .menuBtn button a {
     text-decoration: none;
     color: rgba(110, 28, 106, 0.706);
-    padding: 5px 25px;
+    padding: 7px 35px;
     margin: 0 30px;
     background: linear-gradient(
         140deg,
@@ -72,9 +73,12 @@ h2 {
         height: 30vh;
         flex-direction: column;
     }
+    .menuBtn button{
+        
+    }
     .rules {
         position: absolute;
-        bottom: 5px;
+        bottom: 10px;
         left: 10px;
     }
     .rules p {
