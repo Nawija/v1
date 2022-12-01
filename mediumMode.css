@@ -68,32 +68,31 @@ span {
 }
 
 .red {
-    background-image: url(./img/1.jpg);
+    background-image: url(./img/11.jpg);
 }
 .blue {
-    background-image: url(./img/2.jpg);
+    background-image: url(./img/22.jpg);
 }
 .yellow {
-    background-image: url(./img/3.png);
+    background-image: url(./img/33.jpg);
 }
 .green {
-    background-image: url(./img/4.jpeg);
-    background-position-y: 15%;
+    background-image: url(./img/44.jpg);
 }
 .brown {
-    background-image: url(./img/5.jpg);
+    background-image: url(./img/55.jpg);
 }
 .gray {
-    background-image: url(./img/6.jpg);
+    background-image: url(./img/66.jpg);
 }
 .lightgreen {
-    background-image: url(./img/7.jpeg);
+    background-image: url(./img/77.jpg);
 }
 .cadetblue {
-    background-image: url(./img/8.jpeg);
+    background-image: url(./img/88.jpg);
 }
 .violet {
-    background-image: url(./img/9.jpg);
+    background-image: url(./img/99.jpg);
 }
 
 .off {

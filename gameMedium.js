@@ -46,7 +46,7 @@ startGame.addEventListener("click", () => {
             card.classList.add("hidden");
             card.addEventListener("click", clickCard);
         });
-    }, 3500);
+    }, 2300);
 });
 
 function timerG() {
@@ -62,9 +62,9 @@ function timerG() {
         } else if (minute && sec > 9) {
             timerGame.innerHTML = minute + ":" + sec;
         }
-        if (sec === 59) {
-            sec = 0;
-            minute++;
+        if (sec === 30) {
+            alert('Przegrałeś, Koniec Czasu')
+            location.reload()
         }
     }, 1000);
 }
