@@ -40,25 +40,23 @@ reset.addEventListener("click", () => {
 
 startGame.addEventListener("click", () => {
     textWhenStartBtn()
-    setTimeout(function (){
-        ayr.innerHTML = `Are`
-    },500)
+    ayr.innerHTML = `Are`
     setTimeout(function (){
         ayr.innerHTML = `You`
     },1000)
     setTimeout(function (){
         ayr.innerHTML = `Ready?`
-    },1500)
+    },2000)
     setTimeout(function (){
         ayr.innerHTML = ``
-    },2000)
+    },3000)
     setTimeout(function () {
         cards.forEach((card) => {
             card.classList.remove("off");
             card.classList.remove("hidden");
         });
         startBtn();
-    }, 2000);
+    }, 3200);
 });
 function timerG() {
     let minute = 0;
@@ -87,7 +85,11 @@ function timerG() {
             boardGame.classList.remove("gameY180");
         }
         if (sec === 20) {
-            boardGame.classList.remove("gameY360");
+            boardGame.classList.remove("gameY180");
+        }
+        if (sec === 30) {
+            alert(`You Lose!`)
+            location.reload()
         }
     }, 1000);
 }

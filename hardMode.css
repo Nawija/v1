@@ -51,9 +51,8 @@ span {
 .ayr{
     position: absolute;
     top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 70px;
+    left: 30%;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
     color: #eee;
@@ -143,28 +142,28 @@ span {
 
 
 .rotate-center {
-	-webkit-animation: rotate-center 0.13s ease-in-out infinite alternate backwards;
-	        animation: rotate-center 0.13s ease-in-out infinite alternate backwards;
+	-webkit-animation: rotate-center 0.50s ease-in-out infinite alternate backwards;
+	        animation: rotate-center 0.50s ease-in-out infinite alternate backwards;
 }
 
 
 @-webkit-keyframes rotate-center {
     0% {
-      -webkit-transform: scale(0);
-              transform: scale(0);
+      -webkit-transform: scale(1);
+              transform: scale(1);
     }
     100% {
-      -webkit-transform: scale(50deg);
-              transform: scale(50deg);
+      -webkit-transform: scale(2);
+              transform: scale(2);
     }
   }
   @keyframes rotate-center {
     0% {
-      -webkit-transform: scale(0);
-              transform: scale(0);
+      -webkit-transform: scale(1);
+              transform: scale(1);
     }
     100% {
-      -webkit-transform: scale(50deg);
-              transform: scale(50deg);
+      -webkit-transform: scale(2);
+              transform: scale(2);
     }
   }
