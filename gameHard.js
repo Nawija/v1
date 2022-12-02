@@ -18,10 +18,12 @@ const cardsColor = [
     "lightgreen",
     "lightgreen",
 ];
+const boardGame = document.getElementById("game");
 const startGame = document.getElementById("startGame");
 const score = document.getElementById("score");
 const reset = document.getElementById("reset");
 let cards = document.querySelectorAll(".square");
+let ayr = document.querySelector('.ayr')
 cards = [...cards];
 let activeCard = "";
 let startTime;
@@ -31,22 +33,21 @@ let gameResult = 0;
 let timer;
 let timerGame = document.getElementById("timerGame");
 
+
 reset.addEventListener("click", () => {
     location.reload();
 });
 
 startGame.addEventListener("click", () => {
-        startTime = new Date().getTime();
-        timerG();
+    textWhenStartBtn()
+
+    setTimeout(function () {
         cards.forEach((card) => {
             card.classList.remove("off");
+            card.classList.remove("hidden");
         });
-        setTimeout(function () {
-            cards.forEach((card) => {
-                card.classList.add("hidden");
-                card.addEventListener("click", clickCard);
-            });
-        }, 1000);
+        startBtn();
+    }, 5000);
 });
 function timerG() {
     let minute = 0;
@@ -65,12 +66,30 @@ function timerG() {
             sec = 0;
             minute++;
         }
+        if (sec === 5) {
+            boardGame.classList.add("gameX180");
+        }
+        if (sec === 10) {
+            boardGame.classList.add("gameY180");
+        }
+        if (sec === 15) {
+            boardGame.classList.remove("gameY180");
+        }
+        if (sec === 20) {
+            boardGame.classList.remove("gameY360");
+        }
     }, 1000);
+}
+
+function textWhenStartBtn(){
+    cards.forEach((card) => {
+        card.classList.add("hidden");
+    });
 }
 
 function clickCard() {
     activeCard = this;
-    activeCard.classList.add('flipCard')
+    activeCard.classList.add("flipCard");
     activeCard.classList.remove("hidden");
     if (activeCard === activeCards[0]) return;
     if (activeCards.length === 0) {
@@ -98,14 +117,25 @@ function clickCard() {
             } else {
                 activeCards.forEach((card) => {
                     card.classList.add("hidden");
-                    card.classList.remove('flipCard')
+                    card.classList.remove("flipCard");
                 });
             }
             activeCard = "";
             activeCards.length = 0;
             cards.forEach((card) => card.addEventListener("click", clickCard));
-        }, 600);
+        }, 300);
     }
+}
+
+function startBtn() {
+    setTimeout(function () {
+        startTime = new Date().getTime();
+        timerG();
+        cards.forEach((card) => {
+            card.classList.add("hidden");
+            card.addEventListener("click", clickCard);
+        });
+    }, 3000);
 }
 
 const init = function () {

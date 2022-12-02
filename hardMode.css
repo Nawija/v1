@@ -30,7 +30,15 @@ span {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    transition: transform 1s;
 }
+.gameX180{
+    transform: rotateX(180deg);
+}
+.gameY180{
+    transform: rotateY(180deg);
+}
+
 .square {
     flex-basis: 15%;
     height: 28vh;
@@ -39,6 +47,17 @@ span {
     background-position: center;
     background-size: cover;
     transition: transform .33s;
+}
+.ayr{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    color: #eee;
+    text-shadow: 0 0 25px rgb(19, 2, 255);
 }
 .menuBtn {
     display: flex;
@@ -121,3 +140,31 @@ span {
         font-size: 12px;
     }
 }
+
+
+.rotate-center {
+	-webkit-animation: rotate-center 0.13s ease-in-out infinite alternate backwards;
+	        animation: rotate-center 0.13s ease-in-out infinite alternate backwards;
+}
+
+
+@-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+    }
+    100% {
+      -webkit-transform: scale(50deg);
+              transform: scale(50deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+    }
+    100% {
+      -webkit-transform: scale(50deg);
+              transform: scale(50deg);
+    }
+  }
