@@ -40,14 +40,25 @@ reset.addEventListener("click", () => {
 
 startGame.addEventListener("click", () => {
     textWhenStartBtn()
-
+    setTimeout(function (){
+        ayr.innerHTML = `Are`
+    },500)
+    setTimeout(function (){
+        ayr.innerHTML = `You`
+    },1000)
+    setTimeout(function (){
+        ayr.innerHTML = `Ready?`
+    },1500)
+    setTimeout(function (){
+        ayr.innerHTML = ``
+    },2000)
     setTimeout(function () {
         cards.forEach((card) => {
             card.classList.remove("off");
             card.classList.remove("hidden");
         });
         startBtn();
-    }, 5000);
+    }, 2000);
 });
 function timerG() {
     let minute = 0;
