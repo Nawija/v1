@@ -32,11 +32,17 @@ span {
     justify-content: center;
     transition: transform 1s;
 }
-.gameX180{
+.gameX180 {
     transform: rotateX(180deg);
 }
-.gameY180{
+.gameY180 {
     transform: rotateY(180deg);
+}
+.gameScale {
+    transform: skew(190deg, 10deg);
+}
+.gameSkew {
+    transform: skew(190deg, 10deg);
 }
 
 .square {
@@ -46,17 +52,18 @@ span {
     transition: background-color 1s;
     background-position: center;
     background-size: cover;
-    transition: transform .33s;
+    transition: transform 0.33s;
 }
-.ayr{
+.ayr {
     position: absolute;
-    top: 40%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 50px;
     font-weight: bold;
     text-align: center;
     color: #eee;
-    text-shadow: 0 0 25px rgb(19, 2, 255);
+    text-shadow: 0 0 15px rgb(133, 2, 255);
 }
 .menuBtn {
     display: flex;
@@ -122,8 +129,9 @@ span {
 .hidden {
     background-color: rgba(51, 51, 51, 0.926);
     background-image: none;
+    transition: background-color 0.8s;
 }
-.flipCard{
+.flipCard {
     transform: rotateY(180deg);
 }
 
@@ -139,31 +147,3 @@ span {
         font-size: 12px;
     }
 }
-
-
-.rotate-center {
-	-webkit-animation: rotate-center 0.50s ease-in-out infinite alternate backwards;
-	        animation: rotate-center 0.50s ease-in-out infinite alternate backwards;
-}
-
-
-@-webkit-keyframes rotate-center {
-    0% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-    }
-    100% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-    }
-  }
-  @keyframes rotate-center {
-    0% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-    }
-    100% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-    }
-  }

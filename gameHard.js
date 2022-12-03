@@ -18,12 +18,14 @@ const cardsColor = [
     "lightgreen",
     "lightgreen",
 ];
+
+const randomGameClass = ["gameX180", "gameY180","gameSkew","gameScale"];
 const boardGame = document.getElementById("game");
 const startGame = document.getElementById("startGame");
 const score = document.getElementById("score");
 const reset = document.getElementById("reset");
 let cards = document.querySelectorAll(".square");
-let ayr = document.querySelector('.ayr')
+let ayr = document.querySelector(".ayr");
 cards = [...cards];
 let activeCard = "";
 let startTime;
@@ -33,30 +35,31 @@ let gameResult = 0;
 let timer;
 let timerGame = document.getElementById("timerGame");
 
-
 reset.addEventListener("click", () => {
     location.reload();
 });
 
 startGame.addEventListener("click", () => {
-    textWhenStartBtn()
-    ayr.innerHTML = `Are`
-    setTimeout(function (){
-        ayr.innerHTML = `You`
-    },1000)
-    setTimeout(function (){
-        ayr.innerHTML = `Ready?`
-    },2000)
-    setTimeout(function (){
-        ayr.innerHTML = ``
-    },3000)
+    textWhenStartBtn();
+    setTimeout(function () {
+        ayr.innerHTML = `Are`;
+    }, 600);
+    setTimeout(function () {
+        ayr.innerHTML = `You`;
+    }, 1200);
+    setTimeout(function () {
+        ayr.innerHTML = `Ready?`;
+    }, 1800);
+    setTimeout(function () {
+        ayr.innerHTML = ``;
+    }, 2400);
     setTimeout(function () {
         cards.forEach((card) => {
             card.classList.remove("off");
             card.classList.remove("hidden");
         });
         startBtn();
-    }, 3200);
+    }, 2500);
 });
 function timerG() {
     let minute = 0;
@@ -75,26 +78,33 @@ function timerG() {
             sec = 0;
             minute++;
         }
-        if (sec === 5) {
-            boardGame.classList.add("gameX180");
-        }
-        if (sec === 10) {
-            boardGame.classList.add("gameY180");
-        }
-        if (sec === 15) {
-            boardGame.classList.remove("gameY180");
-        }
-        if (sec === 20) {
-            boardGame.classList.remove("gameY180");
-        }
-        if (sec === 30) {
-            alert(`You Lose!`)
-            location.reload()
+        if (sec === 4) randomHardModeClass()
+        if (sec === 8) randomHardModeClass()
+        if (sec === 12) randomHardModeClass()
+        if (sec === 18) randomHardModeClass()
+        if (sec === 25) randomHardModeClass()
+
+        if (sec === 2) {
+            ayr.innerHTML = `Times Up!`;
+            setTimeout(function () {
+                alert(`You Lose!`);
+                location.reload();
+            }, 500);
         }
     }, 1000);
 }
 
-function textWhenStartBtn(){
+const randomHardModeClass = function () {
+    const positionBoard = Math.floor(Math.random() * randomGameClass.length);
+    boardGame.classList.remove('gameX180');
+    boardGame.classList.remove('gameY180');
+    boardGame.classList.remove('gameScale');
+    boardGame.classList.remove('gameSkew');
+    boardGame.classList.add(randomGameClass[positionBoard]);
+    // cardsColor.splice(position, 1);
+};
+
+function textWhenStartBtn() {
     cards.forEach((card) => {
         card.classList.add("hidden");
     });
