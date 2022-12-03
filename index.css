@@ -110,10 +110,10 @@ h2 {
         bottom: 10px;
         left: 10px;
     }
+    .rules a{
+        bottom: 83px;
+    }
     .rules p {
        font-size: 15px;
-    }
-    .rules p:first-child {
-        font-size: 17px;
     }
 }
