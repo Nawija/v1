@@ -84,7 +84,7 @@ function timerG() {
         if (sec === 18) randomHardModeClass()
         if (sec === 25) randomHardModeClass()
 
-        if (sec === 2) {
+        if (sec === 30) {
             ayr.innerHTML = `Times Up!`;
             setTimeout(function () {
                 alert(`You Lose!`);

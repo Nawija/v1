@@ -50,7 +50,7 @@ h2 {
 .arrow{
     position: absolute;
     left: 10%;
-    bottom: 13.2%;
+    bottom: 14%;
     height: 100px;
     width: 100px;
     background-image: url(./img/arrow.svg);
@@ -64,15 +64,20 @@ h2 {
     bottom: 30px;
     left: 70px;
 }
+.rules a{
+    position: absolute;
+    bottom: 70px;
+    padding: 5px 10px;
+    font-size: 13px;
+    color: #eee;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
 
 .rules p {
     color: #eee;
-}
-.rules p:first-child {
-    font-size: 20px;
-    margin-bottom: 5px;
-    text-transform: capitalize;
-    text-decoration: underline;
 }
 
 @media(max-width: 700px){
@@ -91,7 +96,7 @@ h2 {
     .arrow{
         position: absolute;
         left: 30%;
-        bottom: 15%;
+        bottom: 17%;
         height: 100px;
         width: 100px;
         background-image: url(./img/arrow.svg);

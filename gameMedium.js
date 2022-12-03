@@ -18,10 +18,13 @@ const cardsColor = [
     "lightgreen",
     "lightgreen",
 ];
+
+const boardGame = document.getElementById("game");
 const startGame = document.getElementById("startGame");
 const score = document.getElementById("score");
 const reset = document.getElementById("reset");
 let cards = document.querySelectorAll(".square");
+let ayr = document.querySelector(".ayr");
 cards = [...cards];
 let activeCard = "";
 let startTime;
@@ -36,19 +39,27 @@ reset.addEventListener("click", () => {
 });
 
 startGame.addEventListener("click", () => {
-    startTime = new Date().getTime();
-    timerG();
-    cards.forEach((card) => {
-        card.classList.remove("off");
-    });
+    textWhenStartBtn();
+    setTimeout(function () {
+        ayr.innerHTML = `Are`;
+    }, 600);
+    setTimeout(function () {
+        ayr.innerHTML = `You`;
+    }, 1200);
+    setTimeout(function () {
+        ayr.innerHTML = `Ready?`;
+    }, 1800);
+    setTimeout(function () {
+        ayr.innerHTML = ``;
+    }, 2400);
     setTimeout(function () {
         cards.forEach((card) => {
-            card.classList.add("hidden");
-            card.addEventListener("click", clickCard);
+            card.classList.remove("off");
+            card.classList.remove("hidden");
         });
-    }, 2300);
+        startBtn();
+    }, 2500);
 });
-
 function timerG() {
     let minute = 0;
     let sec = 0;
@@ -62,17 +73,34 @@ function timerG() {
         } else if (minute && sec > 9) {
             timerGame.innerHTML = minute + ":" + sec;
         }
+        if (sec === 59) {
+            sec = 0;
+            minute++;
+        }
+        if(sec === 26){
+            timerGame.classList.add('timeTop')
+        }
         if (sec === 30) {
-            alert(`Lose, Time's up`)
-            location.reload()
+            ayr.innerHTML = `Times Up!`;
+            setTimeout(function () {
+                alert(`You Lose!`);
+                location.reload();
+            }, 500);
         }
     }, 1000);
 }
 
+function textWhenStartBtn() {
+    cards.forEach((card) => {
+        card.classList.add("hidden");
+    });
+}
+
 function clickCard() {
     activeCard = this;
-    if (activeCard === activeCards[0]) return;
+    activeCard.classList.add("flipCard");
     activeCard.classList.remove("hidden");
+    if (activeCard === activeCards[0]) return;
     if (activeCards.length === 0) {
         activeCards[0] = activeCard;
         return;
@@ -98,13 +126,25 @@ function clickCard() {
             } else {
                 activeCards.forEach((card) => {
                     card.classList.add("hidden");
+                    card.classList.remove("flipCard");
                 });
             }
             activeCard = "";
             activeCards.length = 0;
             cards.forEach((card) => card.addEventListener("click", clickCard));
-        }, 200);
+        }, 300);
     }
+}
+
+function startBtn() {
+    setTimeout(function () {
+        startTime = new Date().getTime();
+        timerG();
+        cards.forEach((card) => {
+            card.classList.add("hidden");
+            card.addEventListener("click", clickCard);
+        });
+    }, 3000);
 }
 
 const init = function () {
@@ -113,10 +153,12 @@ const init = function () {
         card.classList.add(cardsColor[position]);
         cardsColor.splice(position, 1);
     });
+
     setTimeout(function () {
         cards.forEach((card) => {
             card.classList.add("off");
         });
     }, 1);
 };
+
 init();
