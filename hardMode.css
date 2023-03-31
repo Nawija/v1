@@ -94,32 +94,32 @@ span {
 }
 
 .red {
-    background-image: url(./img/1.jpg);
+    background-image: url(https://source.unsplash.com/random);
 }
 .blue {
-    background-image: url(./img/2.jpg);
+    background-image: url(https://source.unsplash.com/random);
 }
 .yellow {
-    background-image: url(./img/3.png);
+    background-image: url(https://source.unsplash.com/random);
 }
 .green {
-    background-image: url(./img/4.jpeg);
+    background-image: url(https://source.unsplash.com/random);
     background-position-y: 15%;
 }
 .brown {
-    background-image: url(./img/5.jpg);
+    background-image: url(https://source.unsplash.com/random);
 }
 .gray {
-    background-image: url(./img/6.jpg);
+    background-image: url(https://source.unsplash.com/random);
 }
 .lightgreen {
-    background-image: url(./img/7.jpeg);
+    background-image: url(https://source.unsplash.com/random);
 }
 .cadetblue {
-    background-image: url(./img/8.jpeg);
+    background-image: url(https://source.unsplash.com/random);
 }
 .violet {
-    background-image: url(./img/9.jpg);
+    background-image: url(https://source.unsplash.com/random);
 }
 
 .off {
